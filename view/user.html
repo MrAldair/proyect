@@ -1,0 +1,68 @@
+{% extends "components/layout.html" %} {% block title %}Profile{% endblock %} {%
+    block content %}
+      <div class="row m-sm-5 m-3">
+        <h1 class="col">Welcome {{ data_user[1] }}</h1>
+      </div>
+    
+          <br>
+      <form method="post" action="/data-processing2" class="row g-3 mx-sm-5 mx-2">
+        <div class="col-md-4">
+          <label for="validationDefault01" class="form-label">Employee ID</label>
+          <input name="employee_id" type="text" class="form-control" id="validationDefault01" required />
+        </div>
+        <div class="col-md-4">
+          <label for="validationDefault01" class="form-label">Employee name</label>
+          <input name="employee_name" type="text" class="form-control" id="validationDefault01" required />
+        </div>
+
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">Department</label>
+          <select name="department" class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="1">Human Resources</option>
+            <option value="2">Rios 1800</option>
+            <option value="3">Medicare</option>
+            <option value="4">Billing</option>
+            <option value="5">MSO</option>
+          </select>
+        </div>
+
+        <div class="col-md-3">
+        <label for="validationDefault04" class="form-label">Warning</label>
+        <select name="warning" class="form-select" id="validationDefault04" required>
+          <option selected disabled value="">Choose...</option>
+          <option value="1">Commitment Letter</option>
+          <option value="2">Administrative Record</option>
+          <option value="3">Suspension</option>
+          <option value="4">Verbal</option>
+        </select>
+      </div>
+
+        <div class="col-md-3">
+          <label for="validationDefault04" class="form-label">Reason</label>
+          <select name="Reason" class="form-select" id="validationDefault04" required>
+            <option selected disabled value="">Choose...</option>
+            <option value="Protocols">Protocols</option>
+            <option value="Tardies">Tardies</option>
+            <option value="Idle Time">Idle Time</option>
+            <option value="Poor Attendance">Poor Attendance</option>
+            <option value="Misuses of Tools">Misuse of Tools</option>
+          </select>
+        </div>
+        
+        <div class="col-md-2">
+          <label for="validationDefaultUsername" class="form-label">Date of Incident</label>
+          <div class="input-group">
+            <input name="employeeid" type="date" class="form-control" id="validationDefaultUsername" aria-describedby="inputGroupPrepend2" required/>
+          </div>
+        </div>     
+        <div class="form-floating">
+          <textarea class="form-control" placeholder="Leave a detail explanation" id="floatingTextarea2" style="height: 100px"></textarea>
+          <label for="floatingTextarea2">Details:</label>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-outline-primary" type="submit">Submit</button>
+        </div>
+      </form>
+
+    {% endblock %}
